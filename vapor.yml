@@ -1,0 +1,10 @@
+id: 185
+name: vapor-github-test
+environments:
+    staging:
+        memory: 1024
+        cli-memory: 512
+        runtime: php-8.0:al2
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install'
+            - 'php artisan event:cache'
